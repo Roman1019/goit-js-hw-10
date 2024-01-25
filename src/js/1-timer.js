@@ -3,7 +3,7 @@ import 'flatpickr/dist/flatpickr.min.css';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
-const startButton = document.querySelector('[data-start]');
+const startButton = document.querySelector('[data-start]'); // достукується до Id,класу,і елементу
 let timerActive = false;
 let timerIntervalId;
 const input = document.querySelector('#datetime-picker');
@@ -11,7 +11,7 @@ let endTime;
 const options = {
   enableTime: true,
   time_24hr: true,
-  defaultDate: new Date(),
+  defaultDate: new Date(), // поточна дата в поточний час
   minuteIncrement: 1,
   onClose(selectedDates) {
     const userSelectedDate = selectedDates[0];
@@ -77,7 +77,7 @@ function convertMs(ms) {
 }
 
 startButton.addEventListener('click', function () {
-  if (!timerActive && endTime && endTime > new Date()) {
+  if (!timerActive && endTime > new Date()) {
     input.disabled = true;
     timerIntervalId = setInterval(updateTimer, 1000);
     this.disabled = true;
