@@ -8,6 +8,7 @@ let timerActive = false;
 let timerIntervalId;
 const input = document.querySelector('#datetime-picker');
 let endTime;
+startButton.disabled = true;
 const options = {
   enableTime: true,
   time_24hr: true,

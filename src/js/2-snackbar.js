@@ -27,11 +27,11 @@ form.addEventListener('submit', function (event) {
         message: `✅ Fulfilled promise in ${delay}ms`,
       });
     })
-
     .catch(delay => {
       iziToast.error({
         title: 'Error',
         message: `❌ Rejected promise in ${delay}ms`,
       });
-    });
+    })
+    .finally(() => event.currentTarget.reset());
 });
